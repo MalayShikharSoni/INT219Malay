@@ -1,0 +1,103 @@
+body {
+    background-image: url("abc.jpg");
+
+    margin-right: 200px;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-attachment: fixed;
+
+}
+
+table {
+    border-collapse: separate;
+    width: 100%;
+    text-align: center;
+    
+}
+
+th, td {
+    border-bottom: 2px solid gray;
+    padding: 10px;
+    color: pink;
+}
+
+tbody tr:nth-child(even){
+    background-color: brown;
+}
+
+tbody tr:nth-child(odd){
+    background-color: bisque;
+}
+
+p.dotted {
+    border-style: dotted;
+}
+
+p.dashed {
+    border-style: dashed;
+}
+
+p.solid {
+    border-style: solid;
+}
+
+p.double {
+    border-style: double;
+}
+
+p.groove {
+    border-style: groove;
+}
+
+p.ridge {
+    border-style: ridge;
+}
+
+p.inset {
+    border-style: inset;
+}
+
+p.outset {
+    border-style: outset;
+}
+
+p.none {
+    border-style: none;
+}
+
+p.hidden {
+    border-style: hidden;
+}
+
+p.mix {
+    border-style: dashed dotted ridge;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: black;
+}
+
+.link {
+    background-color: white;
+}
+
+.divv {
+    border: 1px solid red;
+    margin-left: 100px;
+}
+
+p.ex1 {
+    margin-left: inherit;
+}
