@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+    .grid-container {
+        display: grid;
+        grid-template-areas: 
+        "A B C"
+        "D D D"
+        "E E E";
+
+        background-color: beige;
+
+        /* grid-template-columns: 250px 1fr; */
+
+        height: 100vh;
+
+    }
+
+    @media (max-width: 768px) {
+        .grid-container {
+            grid-template-areas:
+            "A"
+            "B"
+            "C"
+            "D"
+            "E"
+            ;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto auto;
+        }
+    }
+
+    .A, .B, .C, .D, .E {
+        border: 2px solid black;
+    }
+
+    .A {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        background-color: green;
+        
+        
+        grid-area: A;
+        
+    }
+
+    .B {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        background-color: green;
+       
+       
+        grid-area: B;
+        
+    }
+
+    .C {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        background-color: green;
+        text-align: center;
+        
+       
+        grid-area: C;
+        
+    }
+
+    .D {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        background-color: green;
+        text-align: center;
+        
+        grid-area: D;
+        
+    }
+
+    .E {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        background-color: green;
+        text-align: center;
+       
+       
+        grid-area: E;
+        
+    }
+
+    
+
+
+
+    
+</style>
+
+</head>
+<body>
+    <div class="grid-container">
+
+        <div class="A">A</div>
+        <div class="B">B</div>
+        <div class="C">C</div>
+        <div class="D">D</div>
+        <div class="E">E</div>
+
+    </div>
+    
+
+</body>
+</html>
