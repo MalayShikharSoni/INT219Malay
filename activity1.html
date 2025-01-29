@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1</title>
+
+    <style>
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+            background-color: whitesmoke;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .header {
+            padding-top: 1vh;
+            height: 15vh;
+            text-align: center;
+            color: white;
+            background-color: rgb(2, 170, 2);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            margin: 1vh;
+        }
+        
+        .main-container {
+            display: grid;
+            padding-top: 30px;
+            margin-right: 10px;
+            margin-left: 10px;
+            padding-bottom: 30px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            /* width: 100vw; */
+            /* height: 100vh; */
+            
+        }
+
+        .box1, .box2, .box3 {
+            box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.3);
+            border-radius: 7px;
+            padding: 15px;
+
+
+        }
+
+        .box1 {
+            grid-column: 1 / 2;
+          
+        }
+
+        .box2 {
+            grid-column: 3 / 4;
+            
+        }
+
+        .box3 {
+            grid-column: 1 / 2;
+            
+        }
+
+        .green-heading {
+            color: rgb(0, 190, 0);
+        }
+
+        .footer {
+            color: white;
+            background-color: black;
+            text-align: center;
+        }
+
+        .footer-div {
+            padding: 30px;
+        }
+
+        .footer-div a {
+            color: green;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <header class="header">
+        <h2>Welcome to Your Website Task</h2>
+
+        <div>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+            
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <div class="box1">
+            <h4 class="green-heading">About CSS</h4>
+            <p>Cascading Style Sheets (CSS) allow you to style and layou your web pages, adding color spacing and more.</p>
+        </div>
+
+        <div class="box2">
+            <h4 class="green-heading">Box Model</h4>
+            <p>The CSS box model describes the rectangular boxes genereated for elements. It includes margins, borders, padding, and the actual content.</p>
+        </div>
+
+        <div class="box3">
+            <h4 class="green-heading">Responsive Design</h4>
+            <p>Responsive design ensures your webpage looks great on all devices</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-div">
+            Createad by [Student Name] [Follow us on <a href="">Instagram</a> | <a href="">Twitter</a> | <a href="">LinkedIn</a>
+        </div>
+
+        <hr style="color: white">
+        <div style="background-color: black;
+        height: 100px;"></div>
+    </footer>
+
+</body>
+</html>
