@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA1</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss"></style>
+</head>
+<body class="flex items-center justify-center bg-gray-600">
+    <div class="container w-450 h-auto rounded-xl p-10 bg-white my-25">
+
+        <p class="font-bold text-3xl mb-6">Book Your Stay</p>
+
+        <div class="flex gap-10">
+
+            <div class="w-1/2">
+                <label for="checkin">Check-in</label>
+                <br><input type="date" name="checkin" class="border  border-gray-500 rounded-md w-full py-1">
+            </div>
+
+            <div class="w-1/2">
+                <label for="checkout">Check-out</label>
+                <br><input type="date" name="checkout" class="border  border-gray-500 rounded-md w-full py-1" >
+            </div>
+
+        </div>
+
+        <p class="font-semibold text-md mt-7 mb-2">Select Room Type</p>
+
+        <div class="flex gap-10 pb-10">
+
+            <div class="w-1/3 border border-gray-500 rounded-md p-3">
+                <p class="font-semibold">Standard</p>
+                <p class="text-gray-500 text-sm">$99/night</p>
+            </div>
+
+            <div class="w-1/3 border border-gray-500 rounded-md p-3">
+                <p class="font-semibold">Deluxe</p>
+                <p class="text-gray-500 text-sm">$149/night</p>
+            </div>
+
+            <div class="w-1/3 border border-gray-500 rounded-md p-3">
+                <p class="font-semibold">Suite</p>
+                <p class="text-gray-500 text-sm">$199/night</p>
+            </div>
+
+        </div>
+
+        <div class="grid grid-cols-2 grid-rows-3 bg-gray-100 rounded-md items-center">
+        
+            <div class="text-left w-1/2 pl-4 ">Total Nights:</div>
+            <div class="text-right pr-5">0</div>
+
+            <div class="text-left w-1/2 font-bold pl-4">Total Price:</div>
+            <div class="text-right font-bold pr-4">$0</div>
+
+            <div class="col-span-2 rounded-md bg-blue-300 text-white text-center mx-5 mt-3 mb-3 py-3">Confirm Booking</div>
+
+        </div>
+
+    </div>
+</body>
+</html>

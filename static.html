@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Static Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #CFC1AF;
+            overflow: hidden;
+        }
+
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            opacity: 0.19; /* Increased opacity */
+            mix-blend-mode: overlay; /* Blends noise with background */
+        }
+    </style>
+</head>
+<body>
+    <canvas class="grain"></canvas>
+    
+    <script>
+        const canvas = document.querySelector(".grain");
+        const ctx = canvas.getContext("2d");
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function generateNoise() {
+            const imageData = ctx.createImageData(canvas.width, canvas.height);
+            const buffer = imageData.data;
+
+            for (let i = 0; i < buffer.length; i += 4) {
+                const intensity = Math.random() * 255;
+                buffer[i] = buffer[i + 1] = buffer[i + 2] = intensity; // Gray noise
+                buffer[i + 3] = 255; // Full opacity
+            }
+
+            ctx.putImageData(imageData, 0, 0);
+        }
+
+        function animate() {
+            generateNoise();
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+        animate();
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to my Page</h1>
+    <button id="btn">Click Me</button>
+
+    <button id="btn1">Confirm</button>
+    
+    <button onclick="greet()">Hello</button>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            alert("Hello from the body section!");
+        })
+
+        document.getElementById("btn1").addEventListener("click", function(){
+            confirm("Confirm!!!")
+        })
+
+        function greet(){
+            alert("Good Morning Pineapple!")
+        }
+
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("btn").addEventListener("click", function(){
+                alert("Buttom clicked");
+            })
+        })
+    </script>
+</body>
+</html>
