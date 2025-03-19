@@ -27,10 +27,7 @@ boxes.forEach((box) => {
             height: '2000px',
         });
 
-        gsap.to(box, {
-            scale: 1.1,
-            duration: 0.5,
-        });
+      
 
         gsap.to(box.querySelector(".prev-content"), {
             opacity: 0,
@@ -50,10 +47,7 @@ boxes.forEach((box) => {
             height: '0px',
         });
 
-        gsap.to(box, {
-            scale: 1,
-            duration: 1,
-        });
+    
 
         gsap.to(box.querySelector(".prev-content"), {
             opacity: 1,
