@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>march21</title>
+</head>
+<body>
+    <script>
+        // let number = prompt("Enter a number");
+        // number = Number(number);
+
+        // if(number > 0){
+        //     alert("The number is positive");
+        // }
+        // else if(number < 0){
+        //     alert("The number is negative");
+        // }
+        // else{
+        //     alert("The number is zero");
+        // }
+
+        const multiply = (a,b) => a * b;
+        console.log(multiply(2,3));
+
+        function isValidUser(username, password) {
+            if((username != null && username != "") && (password != null && password != "")){
+                return true;
+            }
+
+            return false;
+        }
+
+        console.log(isValidUser("abc", "123"));
+        console.log(isValidUser("abc", ""));
+        console.log(isValidUser("", "123"));
+
+        function isEligibleForDiscount(age, isMember) {
+
+            if(age > 60 || isMember){
+                return true;
+            }
+
+            return false;
+        }
+
+        console.log(61,false);
+        console.log(59,false);
+        console.log(61,true);
+
+        function isBetween(x, min, max) {
+            if(min<x && x<max){
+                return true;
+            }
+            return false;
+        }
+
+        console.log(isBetween(5,1,10));
+        console.log(isBetween(1,1,10));
+
+        const car = new Object();
+        car.brand = "Toyota";
+        car.model = "Corolla";
+        car.year = 2022;
+
+        car.getDetails = function(){
+            retrun `${this.brand} ${this.model} ${this.year}`;
+        }
+
+        console.log(car.getDetails);
+
+        console.log(car.brand);
+        console.log(car.model);
+        console.log(car.year);
+
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            },
+            
+            greet: function() {
+                console.log("Hello, my name is " + this.fullName());
+            }
+        }
+
+        console.log(person.firstName);
+        console.log(person["lastName"]);
+        console.log(person.fullName());
+
+        person.age = 31;
+        console.log(person.age);
+
+        person.occupation = "Engineer";
+        console.log(person.occupation);
+
+        person.greet();
+
+        function toggle (val) {
+            retrun (!val);
+        }
+
+        console.log(toggle(true));
+        console.log(toggle(false));
+        
+    </script>
+</body>
+</html>
