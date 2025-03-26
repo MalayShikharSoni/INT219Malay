@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March 26</title>
+</head>
+<body>
+    <h1 class="title">Hello World</h1>
+    <marquee behavior="" direction="">
+        <img src="pictures/4.JPG" id="image" alt="" height="500px">
+    </marquee>
+
+    <p class="para">This is a simple paragraph.</p>
+
+    <button>Change Content</button>
+    <button id="changeImageBtn">Change Image</button>
+    <button id="changeStyleBtn">Change Style</button>
+    <button>Toggle Highlight</button>
+    <button id="eventBtn">Click Me</button>
+
+
+
+    <h2>Press any key</h2>
+    <div id="box">Key Event Info</div>
+    <p id="message"></p>
+
+    
+
+    <script>
+        const title = document.getElementById("title");
+        const image = document.getElementById("image");
+        const paragraph = document.querySelector(".paragraph");
+        const eventBtn = document.getElementById("eventBtn");
+
+        document.getElementById("changeContentBtn")/addEventListener("click", ()=> {
+            title.textContent = "Welcome to JS";
+            paragraph.innerHTML = "<strong>Updated paragraph content.</strong>";
+        });
+
+        document.getElementById("changeImageBtn").addEventListener("click", ()=> {
+            image.setAttribute("src", "pictures/Ronit-User1.JPG");
+            image.setAttribute("alt", "Updated Image");
+        })
+
+        document.getElementById("changeStyleBtn").addEventListener("click", ()=> {
+            title.style.color = "blue";
+            paragraph.style.fontSize = "20px";
+        })
+
+        const box = document.getElementById("box");
+        const message = document.getElementById("message");
+
+        document.addEventListener("keydown", (event)=> {
+            box.style.backgroundColor = "yellow";
+            message.textContent = `Key Down: ${event.key} | Code: ${event.code}`;
+
+        })
+
+        document.addEventListener("keypress", (event)=> {
+            box.style.backgroundColor = "orange";
+            message.textContent = `Key Pressed: ${event.key} | Code: ${event.code}`;
+        })
+        
+        
+
+    </script>
+</body>
+</html>
