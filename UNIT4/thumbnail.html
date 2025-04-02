@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss"></style>
+</head>
+<body class="flex flex-col items-center">
+    
+    <h1 class="text-4xl font-black mb-10">Thumbnail Preview & Lightbox</h1>
+
+    <div class="gallery" id="gallery"></div>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightboxImage" src="" alt="Large Preview">
+    </div>
+
+    <!-- <div class="flex flex-row items-center justify-center space-x-10">
+        <img class="h-50 border-10 border-gray-400 w-auto" src="pictures/1.jpg" alt="">
+        <img class="h-50 border-10 border-gray-400 w-auto" src="pictures/2.jpg" alt="">
+        <img class="h-50 border-10 border-gray-400 w-auto" src="pictures/3.jpg" alt="">
+        <img class="h-50 border-10 border-gray-400 w-auto" src="pictures/4.jpg" alt="">
+        <img class="h-50 border-10 border-gray-400 w-auto" src="pictures/5.jpg" alt="">
+    </div> -->
+
+    <script>
+        const imageSources = [
+            "pictures/1.jpg",
+            "pictures/2.jpg",
+            "pictures/3.jpg",
+            "pictures/4.jpg",
+            "pictures/5.jpg",
+            "pictures/Ronit-User1.jpg",
+        ];
+
+        const gallery = document.getElementById("gallery");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+
+        function createGallery() {
+            imageSources.forEach((src, index) => {
+                const img = document.createElement("img");
+                img.src = src;
+                img.alt = `Image ${index + 1}`;
+                img.addEventListener("click", () => {
+                    lightboxImage.src = src;
+                    lightboxImage.alt = `Image ${index + 1}`;
+                    lightbox.style.display = "block";
+                });
+                gallery.appendChild(img);
+            });
+        }
+
+        lightbox.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        createGallery();
+    </script>
+
+
+</body>
+</html>

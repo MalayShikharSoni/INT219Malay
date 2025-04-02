@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mar28</title>
+</head>
+<body>
+    
+
+    <h2>Interactive Image Gallery</h2>
+    <div class="gallery" id ="gallery"></div>
+
+    <div class="preview" id="preview">
+        <p>Click an image to preview</p>
+        <img src="" id="largeImage" alt="Preview will appear here">
+    </div>
+
+    <script>
+
+        const imageSources = [
+            "pictures/1.jpg",
+            "pictures/2.jpg",
+            "pictures/3.jpg",
+            "pictures/4.jpg",
+            "pictures/5.jpg",
+            "pictures/Ronit-User1.jpg",
+        ];
+
+        const gallery = document.getElementById("gallery");
+        const largeImage = document.getElementById("largeImage");
+
+        function createGallery() {
+            imageSources.forEach((src, index) => {
+                const img = document.createElement("img");
+                img.src = src;
+                img.alt = `Image ${index + 1}`;
+                img.addEventListener("click", () => {
+                    largeImage.src = src;
+                    largeImage.alt = `Image ${index + 1}`;
+                    largeImage.style.display = "block";
+                });
+                gallery.appendChild(img);
+            });
+        }
+
+        createGallery();
+
+    </script>
+
+</body>
+</html>

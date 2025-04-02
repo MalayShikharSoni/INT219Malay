@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="clickMe">Click Me</button>
+    <button id="removeClickMe">Remove Listener</button>
+
+    <p class="message"></p>
+
+    <script>
+
+        const clickMe = document.getElementById("clickMe");
+        const removeClickMe = document.getElementById("removeClickMe");
+        const message = document.querySelector(".message"); 
+
+        function onClick() {
+            message.textContent = "Button Clicked!";
+        }
+
+        clickMe.addEventListener("click", onClick);
+
+        removeClickMe.addEventListener("click", ()=> {
+            clickMe.removeEventListener("click", onClick);
+            message.textContent = "Event Listener Removed!";
+        });
+
+    </script>
+</body>
+</html>

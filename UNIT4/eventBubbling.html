@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss"></style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="outer bg-blue-500 p-10" id="outerDiv">
+        Outer Div
+        <div class="inner bg-red-500 p-10" id="innerDiv">
+            Inner Div
+            <button id="clickButton" class="bg-green-500 p-10">Click Me</button>
+        </div>
+    </div>
+
+    <p id="message">Click the button to see event bubbling in actino.</p>
+
+    <script>
+
+        const outerDiv = document.getElementById("outerDiv");
+        const innerDiv = document.getElementById("innerDiv");
+        const clickButton = document.getElementById("clickButton");
+        const message = document.getElementById("message");
+
+        outerDiv.addEventListener("click", ()=> {
+            message.textContent = "Outer Div Clicked! (Bubbling)";
+        });
+
+        innerDiv.addEventListener("click", ()=> {
+            message.textContent = "Inner Div Clicked! (Bubbling)";
+        });
+
+        clickButton.addEventListener("click", ()=> {
+            message.textContent = "Button Clicked! Event bubbles up.";
+            event.stopPropagation();
+        });
+
+        innerDiv.addEventListener("mouseover", ()=> {
+            message.textContent = "inner Div Mouse over!";
+        });
+
+    </script>
+
+</body>
+</html>

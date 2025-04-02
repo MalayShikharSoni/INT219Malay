@@ -11,7 +11,34 @@
 
     <script>
         const box = document.getElementById("box");
+        const message = document.getElementById("message");
+
+        box.addEventListener("click", ()=> {
+            message.textContent = "Box Clicked!";
+            box.style.backgroundColor = "yellow";
+        });
+
+        box.addEventListener("dblclick", ()=> {
+            message.textContent = "Box Double-Clicked!";
+            box.style.backgroundColor = "orange";
+        });
+
+        box.addEventListener("mouseover", ()=> {
+            message.textContent = "Box Mouse Over!";
+            box.style.backgroundColor = "green";
+        });
+
+        box.addEventListener("mouseout", ()=> {
+            message.textContent = "Box Mouse Out!";
+            box.style.backgroundColor = "blue";
+        });
+
+        box.addEventListener("mousemove",(event)=>{
+            message.textContent = `Mouse Moving - X: ${event.offsetX}, Y: ${event.offsetY}`;
+        });
+
         
+
     </script>
 
 </body>
