@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-blue-300 flex flex-col items-center justify-center">
+    
+    <h1 class="text-white font-bold text-3xl mb-10 mt-10">🎨Dynamic Paragraph Styler</h1>
+
+    <div class="bg-white rounded-xl w-90 p-6">
+
+        <h4 class="w-full text-center font-medium mb-4">Customize Your Paragraph</h4>
+
+        <form action="" id="paragraphForm" class="flex flex-col justify-center">
+
+            <label class="mt-3" for="textColor">Text Color:</label>
+            <select itemid="textColor" class="focus:border-2 px-3 py-1 bg-red-100 rounded-md" name="textColor" id="">
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+            </select>
+
+            <label class="mt-3" for="fontSize">Font Size:</label>
+            <select id="fontSize" class="focus:border-2 px-3 py-1 bg-blue-100 rounded-md" name="fontSize" id="">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+
+            <label class="mt-3" for="backgroundColor">Background Color:</label>
+            <select id="backgroundColor" class="focus:border-2 px-3 py-1 bg-red-100 rounded-md" name="backgroundColor" id="">
+                <option value="white">White</option>
+                <option value="black">Black</option>
+            </select>
+
+            <button class="px-3 py-2 bg-blue-600 rounded-md text-white mt-8">Apply Styles</button>
+
+        </form>
+
+    </div>
+
+
+    <p class="sampleParagraph px-3 py-5 mt-10 bg-white rounded-xl">This is a sample paragraph. Change my style!</p>
+
+    <script>
+
+        const paragraphForm = document.getElementById("paragraphForm");
+
+        paragraphForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const textColor = paragraphForm.textColor.value;
+            const fontSize = paragraphForm.fontSize.value;
+            const backgroundColor = paragraphForm.backgroundColor.value;
+
+            const sampleParagraph = document.querySelector(".sampleParagraph");
+
+            sampleParagraph.style.color = textColor;
+            sampleParagraph.style.fontSize = fontSize;
+            sampleParagraph.style.backgroundColor = backgroundColor;
+        })
+
+    </script>
+    
+</body>
+</html>

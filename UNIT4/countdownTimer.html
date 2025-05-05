@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-blue-300 flex flex-col items-center justify-center">
+    
+
+
+    <div class="bg-white rounded-xl w-90 p-6 mt-10">
+
+
+        <form action="" id="countdownForm" class="flex flex-col items-center justify-center">
+
+            <h1 class="w-full text-center text-blue-400 text-3xl font-black mb-6">Countdown Timer</h1>
+
+            <input type="number" class="w-full py-3 border-3 border-blue-300 rounded-md">
+
+            <button class="px-3 w-[50%] py-2 bg-blue-600 rounded-md text-white mt-8">Start Countdown</button>
+
+            <div class="w-full rounded-md bg-blue-200 text-blue-600 py-4 text-center text-2xl font-bold mt-8">00:00</div>
+
+        </form>
+
+    </div>
+
+    <script>
+
+        const form = document.getElementById("countdownForm");
+
+        form.addEventListener("submit", (event)=> {
+            event.preventDefault();
+
+            const input = form.querySelector("input");
+            let duration = input.value;
+            console.log(duration)
+
+            let minutes = Math.floor(duration / 60);
+            let seconds = duration % 60;
+
+            const display = form.querySelector("div");
+            let countdown = setInterval(() => {
+                if (seconds === 0) {
+                    if (minutes === 0) {
+                        clearInterval(countdown);
+                        display.textContent = "00:00";
+                    } else {
+                        minutes--;
+                        seconds = 59;
+                    }
+                } else {
+                    seconds--;
+                }
+                display.textContent = `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+            }, 1000);
+
+
+        })        
+
+    </script>
+    
+</body>
+</html>

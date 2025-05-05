@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Mini Project</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body{
+            font-family: Arial;
+            margin:20px;
+        }
+        .hidden{
+            display: none;
+        }
+        #successMsg{
+            color:green;
+            font-weight: bold;
+        }
+        #charCount{
+            font-size:0.9em;
+            color:gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>Feedback Form</h2>
+    <form id="feedbackForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email"><br><br>
+        
+        <label for="message">Message:</label><br>
+        <textarea id="message" rows="5" cols="30"></textarea><br>
+        <span id="charCount">0 characters</span><br><br>
+
+        <button type="submit" id="submitBtn">Submit</button>
+        <button type="button" id="resetBtn">Reset</button>
+    </form>
+    <div id="successMsg" class="hidden">Thanks for your Feedback</div>
+
+    <script>
+        $(document).ready(function(){
+            $("#message").on('input', function() {
+                var charCount = $(this).val().length;
+                $("#charCount").text(charCount + " characters");
+            });
+            $("#feedbackForm").on('submit', function(event){
+                event.preventDefault();
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var message = $("#message").val();
+
+                if(name && email && message){
+                    $("#successMsg").removeClass("hidden");
+                    $("#feedbackForm")[0].reset();
+                    $("#charCount").text("0 characters");
+                } else {
+                    alert("Please fill all fields.");
+                }
+            });3
+            
+            $("#resetBtn").on('click', function(){
+                $("#feedbackForm")[0].reset();
+                $("#charCount").text("0 characters");
+                $("#successMsg").addClass("hidden");
+            });
+        })
+    </script>
+</body>
+</html>

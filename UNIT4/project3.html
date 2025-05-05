@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        li {
+            padding: 8px;
+            margin: 5px 0;
+            list-style: none;
+            border: 1px solid #ccc;
+        }
+        .even {
+            background-color: #e0f7fa;
+        }
+
+        .odd {
+            background-color: #ffaffc;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Fruit List (Even/Odd Highlight)</h2>
+
+    <ul id="fruitList">
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+        <li>Strawberry</li>
+    </ul>
+
+    <button id="highlightBtn">Highlight First, Third and Last</button>
+    <button id="resetBtn">Reset</button>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#highlightBtn").click(function(){
+                $("#fruitList li").removeClass("even odd");
+                $("#fruitList li").first().addClass("even");
+                $("#fruitList li").eq(2).addClass("odd");
+                $("#fruitList li").last().addClass("even");
+            })
+
+            $("#resetBtn").click(function(){
+                $("#fruitList li").removeClass("even odd");
+            })
+
+        })
+    </script>
+
+</body>
+</html>
+
